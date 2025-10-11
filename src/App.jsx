@@ -1,12 +1,21 @@
 import './App.css'
-import NavBar from './components/navbarComponents'
-import Welcome from './components/ItemListContainer'
-function App() {
-  const userName = prompt("Ingresa tu nombre: ")
+import NavBar from './components/NavbarComponents'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import NovedadesComponent from './components/NovedadesComponents'
+import ItemDetail from './components/itemDetail/ItemDetail'
+function App(){
   return (
-    <>   
-        <NavBar/>
-        <Welcome name={userName}/>
+    <>  
+        <BrowserRouter>
+         <NavBar/>
+          <Routes>
+            <Route path='/' element={<ItemListContainer/>}/>
+            <Route path='/novedades' element={<NovedadesComponent/>}/>
+            <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
+            <Route path='/producto/:idProducto' element={<ItemDetail/>}/>
+          </Routes>
+        </BrowserRouter> 
     </>
   )
 }

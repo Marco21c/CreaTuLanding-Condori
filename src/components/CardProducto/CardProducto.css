@@ -1,0 +1,14 @@
+.card{
+    height: 28em;
+    text-align: center;
+    background: linear-gradient(to right, #e3e0e0, #fffefe);
+}
+.card img{
+    height: 60%;
+    padding: 30px;
+}
+.card h5{
+    font-weight: bold;
+    font-size: 25px;
+    padding: 22px;
+}

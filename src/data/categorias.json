@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nombre": "Celulares" },
+  { "id": 2, "nombre": "Auriculares" },
+  { "id": 3, "nombre": "Smartwatches" },
+  { "id": 4, "nombre": "Perfumes" },
+  { "id": 5, "nombre": "Accesorios" }
+]

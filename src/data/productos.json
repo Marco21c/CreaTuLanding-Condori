@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "nombre": "iPhone 15 Pro",
+    "precio": 1399999,
+    "categoriaId": 1,
+    "descripcion": "Pantalla Super Retina XDR, chip A17 Pro, 256 GB de almacenamiento.",
+    "imagen": "https://images.unsplash.com/photo-1695822822491-d92cee704368?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=580"
+  },
+  {
+    "id": 2,
+    "nombre": "Samsung Galaxy S24 Ultra",
+    "precio": 1299999,
+    "categoriaId": 1,
+    "descripcion": "Cámara de 200 MP, pantalla AMOLED 6.8”, S Pen incluido.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_918512-MLA91892668393_092025-F.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares Sony WH-1000XM5",
+    "precio": 499999,
+    "categoriaId": 2,
+    "descripcion": "Cancelación activa de ruido y hasta 30 horas de batería.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_794797-MLA50436072460_062022-F.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Apple Watch Series 9",
+    "precio": 649999,
+    "categoriaId": 3,
+    "descripcion": "Seguimiento de salud, resistencia al agua, pantalla Always-On Retina.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_761220-MLA72067378786_102023-F.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Perfume Dior Sauvage 100ml",
+    "precio": 189999,
+    "categoriaId": 4,
+    "descripcion": "Fragancia masculina con notas amaderadas y frescas.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_809848-MLU74978952358_032024-F.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Perfume Carolina Herrera Good Girl 80ml",
+    "precio": 209999,
+    "categoriaId": 4,
+    "descripcion": "Perfume femenino con notas florales y dulces.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_972751-MLU72831734635_112023-F.webp"
+  },
+  {
+    "id": 7,
+    "nombre": "Cargador inalámbrico Samsung",
+    "precio": 49999,
+    "categoriaId": 5,
+    "descripcion": "Base de carga rápida compatible con dispositivos Qi.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_964718-MLA46967000633_082021-F.webp"
+  },
+  {
+    "id": 8,
+    "nombre": "Funda para iPhone 15",
+    "precio": 19999,
+    "categoriaId": 5,
+    "descripcion": "Funda protectora de silicona con diseño minimalista.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_753686-MLA90904555154_082025-F.webp"
+  }
+]
