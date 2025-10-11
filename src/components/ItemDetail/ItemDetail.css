@@ -1,10 +1,23 @@
+.atrasContainer{
+   margin-top:20px;
+   margin-left: 10px;
+}
+.atras{
+    font-size: 16px;
+    text-decoration: none;
+    padding:10px;
+    font-weight:600;
+    border-radius: 5%;
+    
+    background-color: rgba(0, 0, 0, 0.133);
+    color: rgb(0, 0, 0);
+}
 .producto-content{
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 20px;
     
 }
-
 .producto-content img{
     width: 100%; 
     height: 550px;
@@ -21,6 +34,7 @@
 }
 .producto-content-info h1{
     font-size: 3.5em;
+      font-weight: bold;
 }
 .producto-content p{
     font-size: 1.7em;
@@ -49,6 +63,7 @@
 }
 .producto-content-info h1{
     font-size: 2em;
+  
 }
 .producto-content-info h2{
     font-size: 2.5em;

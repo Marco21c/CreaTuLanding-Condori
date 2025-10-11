@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import {useGetProducto} from '../../hooks/useGetProducto'
 import './ItemDetail.css'
 const ItemDetail = () =>{
@@ -11,6 +11,9 @@ const ItemDetail = () =>{
     
         return (
                <>
+                <div className='atrasContainer'>
+                 <Link type="button" to='/' className="atras" >Volver a Inicio</Link>
+                </div>
                 <div className='producto-content'>
                  
                    <img src={producto.imagen} alt={producto.nombre} />
