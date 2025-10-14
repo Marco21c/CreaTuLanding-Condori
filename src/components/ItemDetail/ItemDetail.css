@@ -9,8 +9,11 @@
     font-weight:600;
     border-radius: 5%;
     
-    background-color: rgba(0, 0, 0, 0.133);
+    background-color: rgba(0, 0, 0, 0.065);
     color: rgb(0, 0, 0);
+}
+.atras:hover{
+    color: rgb(0, 0, 126);
 }
 .producto-content{
     display: grid;
@@ -40,7 +43,7 @@
     font-size: 1.7em;
 }
 .producto-content h2{
-    color: rgb(0, 0, 57);
+    color: rgb(0, 0, 126);
     font-weight: bold;
     font-size: 3em;
 }

@@ -12,7 +12,7 @@ const ItemDetail = () =>{
         return (
                <>
                 <div className='atrasContainer'>
-                 <Link type="button" to='/' className="atras" >Volver a Inicio</Link>
+                 <Link type="button" to='/' className="atras" >Volver al Inicio</Link>
                 </div>
                 <div className='producto-content'>
                  
