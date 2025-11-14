@@ -1,0 +1,35 @@
+.section-home{
+    background: linear-gradient(to right, rgb(28, 28, 28), rgb(77, 76, 76));
+    text-align: center;
+    padding: 6em;
+    margin: 20px 0px;
+    color: aliceblue;
+}
+.section-home h1{
+    font-size: 6em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.section-home span{
+    color: orange;
+}
+.section-home p{
+    font-size: 1.5em;
+}
+.section-filtrado{
+    text-align: center;
+    margin: 20px 0px;
+     font-size: 6em;
+     color: rgb(222, 144, 0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width:560px) {
+    .section-home h1{
+    font-size: 3em;
+    }
+    .section-home p{
+    font-size: 1em;
+    }
+    .section-home{
+        padding: 3em;
+    }
+}

@@ -1,0 +1,42 @@
+.cardContent{
+    height: 26em;
+    text-align: center;
+    background: linear-gradient(to right, #e3e0e0, #fffefe);
+    width: 13em;
+}
+.cardContent:hover{
+    opacity: 90%;
+    border-radius: 1px;
+    box-shadow: 0 5px 20px black;
+}
+.cardContent img{
+    height: 200px;
+    padding: 30px;
+}
+.cardContent h5{
+  
+    font-size: 15px;
+    padding: 22px;
+}
+.cardContent p{
+    font-weight: bold;
+    font-size:1.4em;
+    color: rgb(192, 125, 0);
+}
+
+@media (max-width:600px) {
+ .cardContent{
+    width:10em;
+    height: 23em;
+ }
+ .cardContent img{
+    height: 150px;
+     padding: 30px;
+}
+.cardContent h5{
+    font-size: 12px;
+}
+.cardContent p{
+    font-size:1.2em;
+}
+}

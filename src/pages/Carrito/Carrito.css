@@ -1,0 +1,63 @@
+.cardCarrito{
+    width: 80%;
+     box-shadow: 0 5px 20px black;
+    padding: 10px;
+    background-color: whitesmoke;
+    
+}
+.detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+.cardCarrito img{
+  width: 90%;
+  height: 139px;
+}
+.cardCarrito-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    padding: 30px;
+}
+.cardCarrito-container h1{
+    color: orange;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.sectionImg{
+  display: flex;
+  justify-content: center;
+}
+.cardBody{
+  text-align: end;
+  padding: 10px;
+}
+.cardBody p{
+     font-weight: bold;
+  }
+.cardBody h4{
+  text-align: start;
+  font-size: 22px;
+   font-weight: bold;
+}
+
+@media (max-width:720px) {
+  .cardBody h4{
+  font-size: 15px;
+  padding: 5px;
+}
+  .cardBody p{
+    font-size: 13px;
+  }
+  .cardBody h5{
+  font-size: 17px;
+}
+ .cardCarrito img{
+  width: 100%;
+  height: 100px;
+}
+}

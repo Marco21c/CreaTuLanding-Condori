@@ -1,0 +1,38 @@
+.iconoNavbar{
+    width: 25px;
+  height: 25px;
+}
+
+.navbar{
+    background: rgb(255, 180, 42);
+}
+.categoria{
+ background: rgb(253, 177, 35);
+border: 0px;
+}
+.navbarOpc{
+   font-weight: 600;
+    margin-left: 0.5em;
+    padding: 10px;
+}
+.navbarOpc:hover{
+   color: whitesmoke;
+       background-color: orange;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconPerfil{
+    font-size: 25px;
+    color: black;
+}
+.buscarInput{
+    width: 23rem;
+}
+@media (max-width:1020px){
+.buscarInput{
+    width: 100%;
+}
+}

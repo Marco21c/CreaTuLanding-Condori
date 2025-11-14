@@ -1,0 +1,50 @@
+.contadorBtn{
+    display: flex;
+    font-size: 22px;
+    padding: 15px;
+}
+.contadorBtn button{
+    border: none;
+    padding: 6px;
+    background: none;
+}
+.contadorBtn p{
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+.msgContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+.alert-overlay {
+  position: fixed;       
+  top: 20px;           
+  right: 20px;           
+  z-index: 9999;         
+}
+.alert button{
+  margin-left: 20px;
+}
+.alert {
+  background-color: #28a746e3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0);
+}
+
+@media  (max-width: 720px){
+  .contadorBtn p {
+      font-size: 25px;
+  }
+  .contadorBtn{
+    justify-content: center;
+  }
+  .botones{
+    display: grid;
+    justify-content: center;
+  }
+
+}
