@@ -1,0 +1,23 @@
+
+.cartInfo{
+  display: grid;
+  grid-template-columns:  2fr 1fr;
+  justify-content: center;   
+}
+.cartText{
+  text-align: center;
+}
+.cartText h6{
+  font-weight: 600;
+  padding: 3px;
+}
+.cartText p{
+  border-top: 1px solid gray;
+  font-size: 20px;
+  margin: 50px 20px;
+  font-weight: 700;
+  padding: 2px;
+}
+.cartInfo img{
+  height: 55%;
+}

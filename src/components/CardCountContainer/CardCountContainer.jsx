@@ -2,11 +2,10 @@ import {useState } from 'react';
 import './CardCountContainer.css';
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Link } from 'react-router-dom';
 function CardCountContainer({producto}) {
   
   const [contador,setContador] = useState(1);
-  const { addCart, cart } = useContext(CartContext);
+  const { addCart, cart ,openCart } = useContext(CartContext);
   const [habilitarMsg,setHabilitarMsg] = useState(false);
   
   const removeContador = () =>{
@@ -24,7 +23,8 @@ function CardCountContainer({producto}) {
   const handleAddCarrito = () => {
      console.log("Producto que se agrega:", producto);
     addCart(producto, contador);     
-    setHabilitarMsg(true);          
+    setHabilitarMsg(true);         
+    openCart() 
     setTimeout(() => setHabilitarMsg(false), 4000); 
   };
 
@@ -39,7 +39,6 @@ function CardCountContainer({producto}) {
                <div className="alert-overlay">
                   <div className="alert alert-success">
                     ¡Se agregó exitosamente al carrito! 
-                    <Link type="button" className='btn btn-outline-dark' to='/carrito' >Ver carrito</Link>
                   </div>
                 </div>
       ) }

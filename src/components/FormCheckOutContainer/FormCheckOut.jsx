@@ -1,16 +1,33 @@
-import { useState } from "react";
 import {useForm} from "react-hook-form";
 import './FormCheckOut.css'
+import { useContext } from "react";
+import { CartContext} from '../../context/CartContext'
+import { serverTimestamp } from "firebase/firestore";
+import { postOrder } from "../../services/orderService";
+import { useNavigate } from "react-router-dom";
 export default function FormCheckOut() {
- 
- const {register, handleSubmit, formState: { errors }} = useForm();
- 
- const onSubmit = data => console.log(data);
+  const navigate = useNavigate();
+ const {register, handleSubmit, formState: { errors },reset} = useForm();
+ const {clearCart,cart,total} = useContext(CartContext);
+
+ const onSubmit = async (data) => {
+    
+    try{
+    const order = {comprador: data, compra: cart, total: total, fecha: serverTimestamp()}
+    const idOrder = await postOrder(order);
+    console.log(idOrder);
+    clearCart();
+    reset();
+    navigate(`/compra/${idOrder}`);
+    } catch(error){
+        console.log(error);
+    }
+ }
 
  return (
     <>
       <div className="form-container">
-      <div className="form-contend mt-5 ">            
+      <div className="form-contend">            
        
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h4>Datos de contacto </h4>

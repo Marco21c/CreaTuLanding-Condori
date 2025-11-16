@@ -38,7 +38,7 @@ export async function getProducto(productoId) {
      }
 
    }catch(error){
-    console.error("Se produjo un error al obtener los detalles del producto: ", error)
+    throw error;
    }  
 }
 

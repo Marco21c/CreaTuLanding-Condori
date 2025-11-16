@@ -3,39 +3,50 @@ import {CartContext} from '../../context/CartContext'
 import { useContext } from 'react'
 import ItemCartContainer from '../../components/ItemCartContainer/ItemCartContainer';
 import { Link } from 'react-router-dom';
-export default function () {
+import DetalleCompraContainer from '../../components/DetalleCompraContainer/DetalleCompraContainer';
+import { Offcanvas } from "react-bootstrap";
+
+export default function Carrito () {
    
-  const {cart,totalItems,total,clearCart} = useContext(CartContext);
+  const {cart,totalItems,total,clearCart,showCart,closeCart,removeFromCart} = useContext(CartContext);
   
+  
+
   return (
-     <>
-      
-       <div className='cardCarrito-container'> 
+    <>
+       <Offcanvas show={showCart} onHide={closeCart} placement="end" className="bg-light text-dark">
+         <Offcanvas.Header closeButton className='titleCart'>
+                  <Offcanvas.Title >Carrito de Compras</Offcanvas.Title>
+         </Offcanvas.Header>
+         <Offcanvas.Body>
+         <div className='carrito-container'> 
           { cart.length === 0 ? 
-           ( <div className='d-grid justify-content-center'>
+           ( <div className='empty-cart'>
               <h1> Tu carrito esta vacio </h1>
-              <p className='text-center text-secondary'> Te invitamos a ver nuestros productos 🛒 </p>
-              <Link type="button" className='btn btn-primary w-1' to='/' >Ver Productos</Link>
+              <p className='text-secondary'> Te invitamos a ver nuestros productos 🛒 </p>
+              <Link type="button" className='btn btn-primary w-1' to='/' onClick={closeCart}  >Ver Productos</Link>
              </div>) : 
-           ( <h1> Productos seleccionados </h1>)
-          }
-        {cart.map( (item)=>(
-          <ItemCartContainer key={item.id} item={item} />
-         ) 
-         )}
-       </div>
-       <div className='detail-container sticky-bottom'>
-          <div className='cardCarrito'>
-            <div className='cardBody'>
-               <h4> Detalles de la compra: </h4>
-               <p> Cantidad de productos: {totalItems} </p>
-               <h5>Total: ${total.toLocaleString("es-AR")},<small>00</small> </h5>
-               <Link type="button" className='btn btn-primary me-1' to='/checkOut' > Iniciar Compra</Link>
-               <button type="button" className='btn btn-secondary' onClick={clearCart}> Vaciar</button>
-            </div>
-          </div>
-       </div>
-       
+           ( 
+             <div className='detail-container'>
+                {cart.map( (item)=>(    
+                 <div key={item.id} className="cardCarrito">      
+                  <div className='cartButton'>
+                      <i onClick={() =>removeFromCart(item.id)} className="bi bi-x-lg" type='button'></i>       
+                  </div>          
+                 <ItemCartContainer item={item}/>                                                              
+                 </div> ) )}
+              <div className='cardDetail'>
+                   <h4> Detalles de la compra: </h4>
+                  <DetalleCompraContainer totalItems={totalItems} total={total}/>
+                  <Link type="button" className='btn btn-primary me-2' onClick={closeCart} to='/checkOut' > Iniciar Compra</Link>
+                  <button type="button" className='btn btn-secondary' onClick={clearCart}> Vaciar Carrito</button>
+              </div>
+                
+            </div>)}
+         </div> 
+         </Offcanvas.Body> 
+       </Offcanvas>
+
      </>
   )
 }
