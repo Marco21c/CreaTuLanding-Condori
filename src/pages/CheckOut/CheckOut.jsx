@@ -2,11 +2,15 @@ import FormCheckOut from "../../components/FormCheckOutContainer/FormCheckOut"
 import './CheckOut.css'
 import { useContext } from "react"
 import {CartContext} from '../../context/CartContext'
+import { Navigate } from "react-router-dom"
 import DetalleCompraContainer from "../../components/DetalleCompraContainer/DetalleCompraContainer"
 export default function CheckOut() {
    
      const {totalItems,total,cart} = useContext(CartContext);
-      
+     
+     if (cart.length === 0) {
+       return <Navigate to="/" replace />;
+      }
   return (
    <>
      <div className="container-check">

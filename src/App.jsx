@@ -4,7 +4,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import DetalleProducto from './pages/DetalleProducto/DetalleProducto'
 import NovedadesContainer from './components/NovedadesContainer/NovedadesContainer'
 import Home from './pages/Home/Home'
-import Container404 from './components/404Container/404Container'
+import Container404 from './pages/Error404/Error404'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {CartProvider} from './context/CartContext';
 import CheckOut from './pages/CheckOut/CheckOut'
