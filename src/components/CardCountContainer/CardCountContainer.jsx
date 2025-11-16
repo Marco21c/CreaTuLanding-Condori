@@ -50,7 +50,6 @@ function CardCountContainer({producto}) {
         </div>
         
         <button className='btn btn-warning' onClick={() => handleAddCarrito()} disabled={handDisabledCarrito()} >Agregar al carrito</button>   
-        <button type="button" className='btn btn-primary m-2'>Comprar</button>
     </div>
   </>
   )

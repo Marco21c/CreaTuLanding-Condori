@@ -1,0 +1,56 @@
+.datContainer{
+    padding: 10% 14%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 40px;
+}
+.datComprador{
+    padding: 20px;
+      background-color: white;
+      border-radius: 8%;
+}
+.datComprador h6{
+    font-size: 22px;
+    font-weight: 700;
+}
+.datComprador h5{
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    font-weight: 600;
+}
+.cardProduct{
+  background-color: white;
+  box-shadow: 0 2px 5px black;
+  height: 180px;
+  padding: 12px;
+  border-radius: 8%;
+  margin-bottom: 30px;
+}
+.datProducts{
+    padding: 25px;
+    display: grid;
+    justify-content: center;   
+}
+.datProducts h3{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+.datos{
+    padding: 20px 0px;
+    font-size: 17px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+@media (max-width:1020px) {
+    .datContainer{
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+    .datProducts h3{
+         margin-bottom: 40px;
+    }
+}
