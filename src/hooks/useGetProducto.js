@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProductos, getProductosPorId, getProducto} from "../services/productoService";
+import { getProductos, getProductosPorId, getProducto,getProductosPorBadge} from "../services/productoService";
 
 export function useGetProducto(idCategoria) {
   const [productos, setProductos] = useState([]); 
@@ -28,6 +28,26 @@ export function useGetProducto(idCategoria) {
 
   return { productos, loading }; 
 }
+
+export function useGetProductoxBadge(badge) {
+  const [productos, setProductos] = useState([]); 
+
+  useEffect(() => {
+   const fetchProductos = async () => {
+   
+    try {
+        const response = await getProductosPorBadge(badge); 
+        setProductos(response);
+    } catch (error) {
+      console.error("Error al obtener los productos:", error);
+    } 
+  }; 
+  fetchProductos();
+ },[badge]);
+
+  return productos; 
+}
+
 
 export function useDetailProducto(idProducto){
       const [producto, setProducto] = useState(); 

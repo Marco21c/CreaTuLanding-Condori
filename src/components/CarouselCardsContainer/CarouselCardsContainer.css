@@ -1,0 +1,12 @@
+.back-carousel{
+    background-color: rgba(176, 176, 176, 0.463);
+    padding: 20px;
+    margin: 14px ;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+}
+.centrar-cards{
+    display: grid !important;
+    justify-content: center !important;
+}

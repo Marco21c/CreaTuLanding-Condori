@@ -31,7 +31,7 @@ export default function FooterContainer() {
 
     <hr class="border-secondary" />
 
-    <p class="text-center text-secondary mb-0 pb-3">
+    <p class="text-center text-secondary mb-0 pb-4">
       © 2025 Nortecno — Todos los derechos reservados.
     </p>
   </div>

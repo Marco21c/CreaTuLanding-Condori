@@ -27,6 +27,20 @@ export async function getProductosPorId(categoriaId) {
   }
 }
 
+export async function getProductosPorBadge(badge) {
+  try{  
+  const collectionRef = collection(db,"productos");
+  const q = query( collectionRef, where('badge','==',badge));
+  const snapshot = await getDocs(q);
+  const productosFiltrados = snapshot.docs.map(doc => ({id: doc.id,  ...doc.data()}));
+   
+   return productosFiltrados;
+  } catch (error){
+    console.error("Error al obtener los productos Filtrados por Badge: ", error)
+    return [];
+  }
+}
+
 export async function getProducto(productoId) {
    try{
      const documentRef = doc(db,'productos',productoId);
