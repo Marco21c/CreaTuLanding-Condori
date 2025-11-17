@@ -5,7 +5,7 @@ export default function FooterContainer() {
   <footer class="bg-dark text-light pt-4 mt-5">
     <div className="logo-wpp"> 
        <a 
-        href="https://wa.me/3884846638" target="_blank"> <img src={wpp} alt="logo wpp" /></a>
+        href="https://wa.me/5493884846638" target="_blank"> <img src={wpp} alt="logo wpp" /></a>
     </div>
   <div class="container">
     <div class="row">
