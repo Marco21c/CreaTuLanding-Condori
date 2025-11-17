@@ -14,8 +14,8 @@ export default function CarouselCardsContainer({badge,autoplay}) {
       autoplay={{delay:autoplay, disableOnInteraction: false}}
       slidesPerView={4}
       slidesPerGroup={1}
-      spaceBetween={5}
-      loop={true}
+      spaceBetween={4}
+      loop={ofertas.length > 4}
       breakpoints={{
       0: { slidesPerView: 2 },
       800: { slidesPerView: 3},
