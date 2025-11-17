@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import CarWidget from '../CartWidgetContainer/CartWidgetContainer'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {useGetCategorias} from '../../hooks/useGetCategorias'
 import './NavbarContainer.css';
 
@@ -21,22 +21,22 @@ const NavbarContainer = () => {
            </button>
            <div className="collapse navbar-collapse" id="navbarSupportedContent">
              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-               <li className="nav-item">
-                 <Link className="navbarOpc nav-link " to="/"> Inicio</Link>
+               <li className="nav-item mt-2 mb-1">
+                 <NavLink className={({ isActive }) => isActive ? "link-activo" : "navbarOpc"} to="/" > Inicio</NavLink>
                </li>
-               <li className="nav-item">
-                 <Link className="navbarOpc nav-link" to="/novedades">Novedades</Link>
+               <li className="nav-item mt-2 mb-1">
+                 <NavLink className={({ isActive }) => isActive ? "link-activo " : "navbarOpc "} to="/novedades">Novedades</NavLink>
                </li>
-               <li className="nav-item dropdown">
-              <a className="navbarOpc nav-link dropdown-toggle" href='#' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <li className="nav-item mt-2 mb-1 dropdown">
+              <a className="navbarOpc dropdown-toggle" href='#' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
               </a>
               <ul className="categoria dropdown-menu">
                 {categorias.map(cat => (
                   <li key={cat.id}>
-                    <Link className="navbarOpc dropdown-item" to={`/categoria/${cat.id}`}>
+                    <NavLink className={({ isActive }) => isActive ? "link-activo" : "navbarOpc dropdown-item "} to={`/categoria/${cat.id}`}>
                       {cat.nombre}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>

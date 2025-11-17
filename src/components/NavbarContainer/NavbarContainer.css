@@ -2,7 +2,14 @@
     width: 25px;
   height: 25px;
 }
-
+.link-activo{
+    font-weight: bold;
+    font-size: 17px;
+    color: beige;
+     padding: 10px;
+     margin-left: 0.5em;
+     text-decoration: none;
+}
 .navbar{
     background: rgb(255, 180, 42);
 }
@@ -14,6 +21,9 @@ border: 0px;
    font-weight: 600;
     margin-left: 0.5em;
     padding: 10px;
+    text-decoration: none;
+    color: rgb(35, 35, 35);
+    font-size: 17px;
 }
 .navbarOpc:hover{
    color: whitesmoke;

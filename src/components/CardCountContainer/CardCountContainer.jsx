@@ -25,7 +25,7 @@ function CardCountContainer({producto}) {
     addCart(producto, contador);     
     setHabilitarMsg(true);         
     openCart() 
-    setTimeout(() => setHabilitarMsg(false), 4000); 
+    setTimeout(() => setHabilitarMsg(false), 2000); 
   };
 
   const productoEnCarrito = cart.find(item => item.id === producto.id);
