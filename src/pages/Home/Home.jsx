@@ -19,7 +19,7 @@ function Home() {
     <h1> Nor<span>Tecno</span></h1>
     <p> Los mejores <span>precios</span> en un solo lugar. </p>
     </div>
-    <CarouselCardsContainer/>
+    <CarouselCardsContainer badge={"oferta"} autoplay={2000}/>
     </div> )
      } 
     <ProductListContainer idCategoria={idCategoria}/>

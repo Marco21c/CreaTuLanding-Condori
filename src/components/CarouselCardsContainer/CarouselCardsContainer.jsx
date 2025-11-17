@@ -4,14 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import './CarouselCardsContainer.css'
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-export default function CarouselCardsContainer() {
-  const ofertas = useGetProductoxBadge("oferta") || [];
+export default function CarouselCardsContainer({badge,autoplay}) {
+  const ofertas = useGetProductoxBadge(badge) || [];
      
   return (
     <div className="back-carousel">
     <Swiper
       modules={[Autoplay]}
-      autoplay={{delay:2000, disableOnInteraction: false}}
+      autoplay={{delay:autoplay, disableOnInteraction: false}}
       slidesPerView={4}
       slidesPerGroup={1}
       spaceBetween={5}
