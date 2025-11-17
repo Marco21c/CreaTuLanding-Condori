@@ -6,10 +6,12 @@ export const CartContext = createContext();
 export const CartProvider = ({children})=>{
  const [cart,setCart] = useState([]);
  const [showCart, setShowCart] = useState(false);
+ const [compraRealizada, setCompraRealizada] = useState(false);
 
- const openCart = () => setShowCart(true);
- const closeCart = () => setShowCart(false);
-  const addCart = (producto,qty) =>{
+    const openCart = () => setShowCart(true);
+    const closeCart = () => setShowCart(false);
+
+    const addCart = (producto,qty) =>{
     if(isInCart(producto.id)){
        setCart(cart.map((item)=>{ 
         if(item.id === producto.id){
@@ -37,12 +39,14 @@ export const CartProvider = ({children})=>{
   const isInCart = (id) =>{
     return cart.some((item)=>item.id === id)
   }
-   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
    
-   const total = cart.reduce((acc,item) => acc + (item.precio * item.quantity) ,0)
-    
+  const total = cart.reduce((acc,item) => acc + (item.precio * item.quantity) ,0)
+  
+  const finalizarCompra = () =>{ setCompraRealizada(true)}
+  
   return (
-    <CartContext.Provider value={{cart,total,addCart,clearCart,removeFromCart,totalItems, showCart, openCart, closeCart}}>
+    <CartContext.Provider value={{cart,total,addCart,clearCart,removeFromCart,totalItems, showCart, openCart, closeCart,finalizarCompra, compraRealizada}}>
           {children}
     </CartContext.Provider>
   )

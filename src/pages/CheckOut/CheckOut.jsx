@@ -6,9 +6,9 @@ import { Navigate } from "react-router-dom"
 import DetalleCompraContainer from "../../components/DetalleCompraContainer/DetalleCompraContainer"
 export default function CheckOut() {
    
-     const {totalItems,total,cart} = useContext(CartContext);
+     const {totalItems,total,cart,compraRealizada} = useContext(CartContext);
      
-     if (cart.length === 0) {
+     if (cart.length === 0 && !compraRealizada) {
        return <Navigate to="/" replace />;
       }
   return (

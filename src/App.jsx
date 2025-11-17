@@ -2,13 +2,14 @@ import './App.css'
 import NavBar from './components/NavbarContainer/NavbarContainer'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import DetalleProducto from './pages/DetalleProducto/DetalleProducto'
-import NovedadesContainer from './components/NovedadesContainer/NovedadesContainer'
+import Novedades from './pages/Novedades/Novedades'
 import Home from './pages/Home/Home'
 import Container404 from './pages/Error404/Error404'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {CartProvider} from './context/CartContext';
 import CheckOut from './pages/CheckOut/CheckOut'
 import DatosDeCompra from './pages/DatosDeCompra/DatosDeCompra'
+import FooterContainer from './components/FooterContainer/FooterContainer'
 function App(){
   return (
     <>  
@@ -17,7 +18,7 @@ function App(){
          <NavBar/>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/novedades' element={<NovedadesContainer/>}/>
+            <Route path='/novedades' element={<Novedades/>}/>
             <Route path='/categoria/:idCategoria' element={<Home/>}/>
             <Route path='/producto/:idProducto' element={<DetalleProducto/>}/>
             <Route path='*' element={<Container404/>}/>
@@ -25,6 +26,7 @@ function App(){
             <Route path='/compra/:idCompra' element={<DatosDeCompra/>}/>
           </Routes>
          </CartProvider>
+         <FooterContainer/>
         </BrowserRouter> 
       
     </>

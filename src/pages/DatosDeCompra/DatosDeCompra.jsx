@@ -2,12 +2,13 @@ import './DatosDeCompra.css'
 import { useParams } from "react-router-dom"
 import {useGetOrder} from '../../hooks/useGetOrder'
 import ItemCartContainer from "../../components/ItemCartContainer/ItemCartContainer";
+import LoadingContainer from "../../components/loadingContainer/LoadingContainer"
 export default function DatosDeCompra() {
   
  const {idCompra} = useParams();
  const {order,loading} = useGetOrder(idCompra);
    
- if (loading || !order) return <p> Loading... </p>
+ if (loading || !order) return <LoadingContainer/>
   return (
     <> <div className="datContainer">
       <div className='datComprador'>
@@ -29,8 +30,8 @@ export default function DatosDeCompra() {
       <div className='datProducts'>
         <h3> Detalles de los productos: </h3>
             
-             {order.compra.map((item) => (
-               <div className='cardProduct'>
+             {order.compra.map((item,index) => (
+               <div className='cardProduct' key={index} >
                 <ItemCartContainer item={item}/>
                </div> 
               ))} 

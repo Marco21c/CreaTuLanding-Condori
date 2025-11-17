@@ -1,10 +1,15 @@
 .carousell{
-    width: 80% !important;
-    margin-top: 4.2em !important;
+    width: 70em !important;
 }
 .carousel img{
     height: 200px;
 }
+.containerCarousel{
+    display: grid;
+    justify-content: center;
+      margin-top: 7em;
+}
+
 @media(max-width:1020px) {
     .carousel{
     width: 100% !important;
@@ -15,3 +20,4 @@
     height: 120px;
 }
 }
+

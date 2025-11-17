@@ -18,7 +18,10 @@ const ProductDetailContainer = ({idProducto}) =>{
                   <h1> {producto.nombre}</h1>
                   <p>{producto.descripcion}</p>
                   <h2>$ {producto.precio.toLocaleString("es-AR")},00</h2>
-                  <p className='text-secondary'>{producto.stock} unidades disponibles</p>
+                   {producto.stock !== 0 ? 
+                   (<p className='text-secondary'> {producto.stock} unidades disponibles</p>) : 
+                   (<p className='text-secondary'> Sin stock</p>)
+                   }
                    <CardCountContainer producto={producto}/>
                                                  
                  </div>

@@ -1,0 +1,15 @@
+.logo-wpp{
+     position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+.logo-wpp img{
+    height: 40px;
+}

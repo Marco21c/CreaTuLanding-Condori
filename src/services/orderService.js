@@ -1,4 +1,4 @@
-import { collection,addDoc, getDoc, doc} from "firebase/firestore";
+import { collection,addDoc, getDoc, doc, updateDoc} from "firebase/firestore";
 import db from "../firebaseConfig";
 
 export async function postOrder(order) {
@@ -6,6 +6,19 @@ export async function postOrder(order) {
     const ventas = collection(db,"orders");
     try{
      const response = await addDoc(ventas, order);
+     
+     await Promise.all(
+        order.compra.map(async (prod)=> {
+             const productoRef = doc(db,"productos",prod.id);
+             const snapshot = await getDoc(productoRef);
+             const stockActual = snapshot.data().stock;
+
+             await updateDoc(productoRef,{
+             stock: stockActual - prod.quantity
+             });
+        })
+     )
+     
      return response.id;
     } catch(error){
         throw error;

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function FormCheckOut() {
   const navigate = useNavigate();
  const {register, handleSubmit, formState: { errors },reset} = useForm();
- const {clearCart,cart,total} = useContext(CartContext);
+ const {clearCart,cart,total,finalizarCompra} = useContext(CartContext);
 
  const onSubmit = async (data) => {
     
@@ -17,6 +17,7 @@ export default function FormCheckOut() {
     const idOrder = await postOrder(order);
     console.log(idOrder);
     clearCart();
+    finalizarCompra();
     reset();
     navigate(`/compra/${idOrder}`);
     } catch(error){

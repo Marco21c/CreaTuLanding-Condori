@@ -10,7 +10,6 @@ export function useGetOrder(idOrder) {
                .catch(error => console.log("Se produjo un error.",error))
                .finally(setLoading(false))
           },[idOrder]
-          );
-          
+          );       
           return {order,loading};
 }
