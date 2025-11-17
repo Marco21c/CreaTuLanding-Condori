@@ -39,9 +39,9 @@ border: 0px;
     color: black;
 }
 .buscarInput{
-    width: 23rem;
+    width: 29rem;
 }
-@media (max-width:1020px){
+@media (max-width:990px){
 .buscarInput{
     width: 100%;
 }

@@ -1,0 +1,11 @@
+.buscar-container{
+    margin-top: 10em;
+    text-align: center;
+}
+.container-encontrados{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}

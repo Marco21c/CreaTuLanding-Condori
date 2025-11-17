@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProductos, getProductosPorId, getProducto,getProductosPorBadge} from "../services/productoService";
+import { getProductos, getProductosPorId, getProducto,getProductosPorBadge,buscarProductosPorNombre} from "../services/productoService";
 
 export function useGetProducto(idCategoria) {
   const [productos, setProductos] = useState([]); 
@@ -48,6 +48,28 @@ export function useGetProductoxBadge(badge) {
   return productos; 
 }
 
+export function useGetProductosBuscados(buscado){
+     const [encontrados,setEncontrados] = useState([])
+     const [loading,setLoading] = useState(false)
+
+     useEffect(()=>{
+       const handleBuscar = async () => {
+           
+           setLoading(true);
+            try{   
+              const res = await buscarProductosPorNombre(buscado);
+               setEncontrados(res);        
+            } catch (error){
+                console.log(error)
+            } finally {
+              setLoading(false);
+            }
+           } 
+       handleBuscar();  
+     },[buscado])
+
+     return {encontrados,loading}
+}
 
 export function useDetailProducto(idProducto){
       const [producto, setProducto] = useState(); 

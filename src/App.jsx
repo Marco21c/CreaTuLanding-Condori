@@ -10,6 +10,7 @@ import {CartProvider} from './context/CartContext';
 import CheckOut from './pages/CheckOut/CheckOut'
 import DatosDeCompra from './pages/DatosDeCompra/DatosDeCompra'
 import FooterContainer from './components/FooterContainer/FooterContainer'
+import Buscar from './pages/Buscar/Buscar'
 function App(){
   return (
     <>  
@@ -24,6 +25,7 @@ function App(){
             <Route path='*' element={<Container404/>}/>
             <Route path='/checkOut' element={<CheckOut/>}/> 
             <Route path='/compra/:idCompra' element={<DatosDeCompra/>}/>
+            <Route path='/buscar/:buscado' element={<Buscar/>}/>
           </Routes>
          </CartProvider>
          <FooterContainer/>

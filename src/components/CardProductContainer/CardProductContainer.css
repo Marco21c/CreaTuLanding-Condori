@@ -20,23 +20,23 @@
 }
 .cardContent p{
     font-weight: bold;
-    font-size:1.3em;
+    font-size:1.4em;
     color: rgb(192, 125, 0);
 }
 
 @media (max-width:600px) {
  .cardContent{
     width:10em;
-    height: 23em;
+    height: 24em;
  }
  .cardContent img{
-    height: 150px;
-     padding: 30px;
+    height: 170px;
+     padding: 10px;
 }
 .cardContent h5{
     font-size: 12px;
 }
 .cardContent p{
-    font-size:1.2em;
+    font-size:1.1em;
 }
 }

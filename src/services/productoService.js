@@ -27,6 +27,26 @@ export async function getProductosPorId(categoriaId) {
   }
 }
 
+export async function buscarProductosPorNombre(buscado) {
+  try {
+    const productosRef = collection(db, "productos");
+    const snapshot = await getDocs(productosRef);
+
+    const palabra = buscado.trim().toLowerCase();
+
+    const filtrados = snapshot.docs
+      .map(doc => ({ id: doc.id, ...doc.data() }))
+      .filter(prod => 
+        prod.nombre.toLowerCase().includes(palabra)
+      );
+
+    return filtrados;
+
+  } catch (error) {
+    console.error("Error buscando productos:", error);
+    return [];
+  }
+}
 export async function getProductosPorBadge(badge) {
   try{  
   const collectionRef = collection(db,"productos");

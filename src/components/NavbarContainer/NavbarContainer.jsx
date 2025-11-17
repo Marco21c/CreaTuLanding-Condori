@@ -5,11 +5,24 @@ import CarWidget from '../CartWidgetContainer/CartWidgetContainer'
 import { NavLink } from 'react-router-dom';
 import {useGetCategorias} from '../../hooks/useGetCategorias'
 import './NavbarContainer.css';
-
+import {useForm} from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const NavbarContainer = () => {
-   const { categorias } = useGetCategorias();
+    const navigate = useNavigate();
+    const { categorias } = useGetCategorias();
+    const {register, handleSubmit,reset} = useForm();
    
+    const onSubmit = async (data) => {  
+        try{
+        if (data.search != ""){ 
+        const buscado = data.search
+        navigate(`/buscar/${buscado}`);
+        reset();}
+        } catch(error){
+            console.log(error);
+        }
+     }
    return(
      <>          
       <nav className="navbar navbar-expand-lg fixed-top">
@@ -43,9 +56,9 @@ const NavbarContainer = () => {
             </li>
                
              </ul>
-             <form className="d-flex" role="search">
-               <input className="form-control me-3 buscarInput" type="search" placeholder="Buscar productos" aria-label="Search"/>
-               <button className="btn btn-outline-dark" type="submit"><i className="bi bi-search"></i></button>
+             <form className="d-flex" role="search" onSubmit={handleSubmit(onSubmit)}>
+               <input {...register("search")} className="form-control me-2 buscarInput" type="search" placeholder="Buscar productos" aria-label="Search"/>
+               <button className="btn btn-outline-dark " type="submit"><i className="bi bi-search"></i></button>
              </form>
 
              <div className='me-3 icons' >
